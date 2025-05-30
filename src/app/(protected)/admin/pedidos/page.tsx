@@ -249,7 +249,7 @@ export default function AdminPedidosPage() {
                           <tbody className="bg-white divide-y divide-gray-200">
                             {pedido.hojadepedido.productos.map((producto, index) => {
                               // Verificar si el producto tiene nombre (puede estar como nombreproducto o nombreProducto)
-                              const nombreProducto = producto.nombreproducto || producto['nombreProducto'] || 'Producto sin nombre';
+                              const nombreProducto = (producto as any).nombreproducto || (producto as any)['nombreProducto'] || 'Producto sin nombre';
                               return (
                                 <tr key={index} className="hover:bg-gray-50">
                                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
